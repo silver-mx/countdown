@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="node_modules/spectrum-colorpicker2/dist/spectrum.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/spectrum-colorpicker2/dist/spectrum.min.css">
+    <link rel="stylesheet" type="text/css" href="main.css">
+</head>
+
+<body>
+
+    <div class="form">
+        <span>
+            <label for="bgColor">Background color:</label>
+            <input id="bgColor" value='rgba(0, 0, 0, 0.917)' />
+        </span>
+        <span>
+            <label for="outerCircleColor">Outer circle color:</label>
+            <input id="outerCircleColor" value='#27303a' />
+        </span>
+        <span>
+            <label for="innerCircleColor">Inner circle color:</label>
+            <input id="innerCircleColor" value='rgba(0, 0, 0, 0.863)' />
+        </span>
+        <span>
+            <label for="fillingColor">Filling color:</label>
+            <input id="fillingColor" value='orange' />
+        </span>
+        <span>
+            <label for="lineColor">Line color:</label>
+            <input id="lineColor" value='#FFFFFF' />
+        </span>
+        <span>
+            <label for="textColor">Text color:</label>
+            <input id="textColor" value='#FFFFFF' />
+        </span>
+        <span>
+            <button type="button" onclick="play()">Play</button>
+            <button type="button" onclick="record()">Record</button>
+        </span>
+    </div>
+
+    <audio controls id="audioControl">
+        <source src="countdown60s.wav" type="audio/wav">
+    </audio>
+
+    <canvas id="countdown">
+        Your browser does not support the HTML5 canvas tag.</canvas>
+
+</body>
+<script src='main.js'></script>
+<script>
+    $('#bgColor').spectrum({
+        type: "component",
+        change: (color) => {
+            document.body.style.backgroundColor = color;
+        },
+    });
+
+    $('#outerCircleColor').spectrum({
+        type: "component",
+        change: (color) => {
+            OUTER_CIRCLE_COLOR = color;
+            resetAndRestart();
+        },
+    });
+
+    $('#fillingColor').spectrum({
+        type: "component",
+        change: (color) => {
+            FILLING_COLOR = color;
+            resetAndRestart();
+        },
+    });
+
+    $('#innerCircleColor').spectrum({
+        type: "component",
+        change: (color) => {
+            INNER_CIRCLE_COLOR = color;
+            resetAndRestart();
+        },
+    });
+
+    $('#lineColor').spectrum({
+        type: "component",
+        change: (color) => {
+            LINE_COLOR = color;
+            resetAndRestart();
+        },
+    });
+
+    $('#textColor').spectrum({
+        type: "component",
+        change: (color) => {
+            TEXT_COLOR = color;
+            resetAndRestart();
+        },
+    });
+
+    draw();
+
+</script>
+
+</html>

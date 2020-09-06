@@ -1,0 +1,21 @@
+@font-face {
+    font-family: "LCD14";
+    src: url("lcd-font/otf/LCD14.otf") format("opentype");
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.917);
+}
+
+#countdown {
+    border:1px solid #d3d3d3;
+}
+
+#audioControl {
+    display: none;
+}
+
+.form {
+    border: 1px solid #d3d3d3;
+    background-color: white;
+}
