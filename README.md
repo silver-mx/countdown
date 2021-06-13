@@ -1,6 +1,10 @@
 # countdown
 A simple countdown based on HTML and Javascript
 
+## See it in youtube
+
+Go to [video](https://www.youtube.com/watch?v=U52b_VUEHK4)
+
 ## Run
 
 ```
